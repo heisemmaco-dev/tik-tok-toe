@@ -1,0 +1,213 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --comboColor: rgb(22, 82, 82);
+}
+
+body {
+  color: orange;
+  background-color: rgb(6, 65, 65);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: all .20s ease-in;
+}
+
+.first_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.first_wrap button {
+  border: unset;
+  border-radius: 5px;
+  padding: 8px 15px;
+  background-color: rgb(8, 140, 201);
+  color: wheat;
+  font-weight:600;
+  transition: all .20s ease;
+  cursor: pointer;
+}
+
+.first_wrap button:hover {
+  background-color: rgb(86, 181, 226);
+  color: rgb(111, 107, 100);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 82px);
+  grid-template-rows: repeat(3, 82px);
+  margin-top: 22px;
+}
+
+
+.box {
+  border-right: 2px solid orange;
+  border-bottom: 2px solid orange;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 100px;
+}
+
+.box:nth-child(3n) {
+  border-right: none;
+}
+
+.box:nth-child(6) ~ .box {
+  border-bottom: none;
+}
+
+.popupDiv {
+  position: absolute;
+
+  background-color: rgb(31, 72, 57);
+  max-width: 380px;
+  width: 70%;
+  max-height: 500px;
+  height: 130px;
+  z-index: 1;
+  font-size: 1.2rem;
+
+  border-radius: 10px;
+  text-align: center;
+
+  padding: 20px;
+
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  box-shadow: 0px 4px 8px 0px rgba(21, 178, 250, 0.774);
+  transition: all .20s ease-in;
+}
+
+.popupDiv button, .normalrestart {
+  border: unset;
+  border-radius: 5px;
+  padding: 8px 15px;
+  background-color: rgb(8, 140, 201);
+  color: wheat;
+  font-weight:600;
+  transition: all .20s ease;
+  cursor: pointer;
+}
+
+.popupDiv button:hover, .normalrestart:hover {
+  background-color: rgb(86, 181, 226);
+  color: rgb(65, 63, 59);
+  box-shadow: 0px 4px 8px 0px rgba(21, 178, 250, 0.774);
+}
+
+.popupDiv button:focus, .normalrestart:focus {
+  background-color: rgb(86, 181, 226);
+  color: rgb(65, 63, 59);
+
+  outline: 1px solid orange;
+  outline-offset: 2px;
+}
+
+.popupDiv button:active, .normalrestart:active {
+  background-color: rgb(63, 127, 156);
+}
+
+
+.normalrestart {
+  display: none;
+  align-self: self-end;
+  padding: 5px 10px;
+  font-size: 0.6rem;
+}
+
+.pop2 {
+  display: none;
+}
+@media screen and (min-width: 320px) {
+  .container {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+  }
+
+  .box {
+    font-size: 5.7rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .first_wrap button {
+    width: 39%;
+    padding: 11px 15px;
+    font-size: 1rem;
+   }
+
+   .warning {
+    font-size: 1.2rem;
+   }
+}
+
+@media screen and (min-width: 620px) {
+  .container {
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+}
+
+.box {
+  line-height: 150px;
+  font-size: 8rem;
+}
+
+ h1 {
+  font-size: 3rem;
+ }
+
+ .first_wrap button {
+  width: 33%;
+  padding: 8px 15px;
+  font-size: 1rem;
+ }
+
+ .warning {
+  font-size: 1.5rem;
+ }
+}
+
+@media screen and (min-width: 820px) {
+  .container {
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(3, 140px);
+}
+
+.box {
+  line-height: 140px;
+  font-size: 8rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.warning {
+  font-size: 1.3rem;
+ }
+}
